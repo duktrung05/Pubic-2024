@@ -1,0 +1,203 @@
+#bai1-a
+def tong_cac_chu_so(n):
+    tong = 0 
+    for chu_So in str(n):
+        tong += int(chu_so)
+    return tong
+#nhap tu ban phim 
+n = int(input("nhap so nguyen duong: "))
+if n > 0:
+    print("tong cac chu so " , n ,"la:" , tong_cac_chu_so(n))
+else:
+    print("vui long nhap lai so duong .")    
+
+#bai1-b
+def tong_cac_uoc(n):
+    tong = 0 
+    for i in range(1, n+1):
+        if n % i == 0:
+            tong += i
+    return tong
+n = int(input("nhap so nguyen duong: "))
+if n > 0:
+    print("tong cac uoc so " , n ,"la:" , tong_cac_uoc(n))
+else:
+    print("vui long nhap 1 so duong .")    
+
+#bai1-c
+def check(a,b,c):
+    if a+b-c>0 and a+c-b>0 and b+c-a>0 :
+        if a==b==c:
+            print("tam giac deu ")
+        elif a==b or b==c or a==c:
+            print("tam giac can")
+        elif a**2 + b**2 == c**2 or a**2 + c**2 == b**2 or b**2 + c**2 == a**2:
+            print("tam giac vuong")
+        else:
+            print("tam giac thuong")
+    else:
+        print("khong phai tam giac")           
+        
+a = int(input("Nhập cạnh thứ nhất: "))
+b = int(input("Nhập cạnh thứ hai: "))
+c = int(input("Nhập cạnh thứ ba: "))
+
+#bai2
+a = int(input(nhap a:))
+b = int(input(nhap b:))
+print("a + b =" , a+b)
+print("a - b =" , a-b)
+print("a * b = " a* b)
+if b != 0:
+    print("a // b =" , a // b)
+else:
+    print("khong the chia cho 0")    
+ 
+print("a**b=", a**b)   
+if b != 0:
+    print("a % b =", a % b)
+else:
+    print("Không thể chia cho 0")
+
+if a > b:
+    print("a lon hon b ")
+elif a < b:
+    print("a nho hon b ")
+else:
+    print("a bang b ")
+print("a and b =" , a & b)
+print("a or b = " a | b)
+print("not a == b = " , not a == b)
+print("a dich phai 1 don vi = " , a >> 1)
+print("a dich trai 1 don vi = ", a << 1)
+
+#bai3
+#a
+def tinhS1(n):
+    s = 0
+    for i in range(1,2*n+2):
+        if i % 2 == 0:
+            s -= i 
+        else:
+            s += i
+    return s
+   
+n = int(input("nhap so nguyen n ="))
+if n > 0:
+    print("S1(n) =" ,tinhS1(n))
+else:
+    print("nhap lai so n .")
+    
+#b
+def tinhS2(n):
+    s = 0
+    for i in range(1, n +1):
+        s += 1/i 
+    return s
+n = int(input("nhap so nguyen n ="))
+if n > 0:
+    print("S2(n) =" ,tinhS2(n))
+else:
+    print("nhap lai so n .")
+
+#c
+def ptb2(a,b,c):
+    delta = b*b - 4*a*c
+    if delta > 0:
+        x1 = (-b + math.sqrt(delta)) / (2*a)
+        x2 = (-b - math.sqrt(delta)) / (2*a)
+        return f"Phương trình có hai nghiệm phân biệt: x1 = {x1}, x2 = {x2}"
+    elif delta  = 0 :
+        x = - b/(2*a)
+        return f"phuong trubg co nghiem kep : x ={x}"
+    else:
+        return "phuong trinh vo nghiem ."
+
+a = float(input("Nhập hệ số a: "))
+b = float(input("Nhập hệ số b: "))
+c = float(input("Nhập hệ số c: "))
+
+if a != 0:
+    print(ptb2(a,b,c))
+else:
+    print("a phải khác 0. Đây không phải là phương trình bậc 2.")
+
+#bai4
+
+n = int(input())
+a = 0
+b = 1
+tong = 0
+print("0" + " 1", end = " ")
+for i in range(2, n, 1):
+    tong = a + b
+    print(str(tong), end = " ")
+    a = b
+    b = tong
+    
+#bai5
+n = int(input())
+for i in range(0, n + 1, 1):
+    stri = str(i)
+    tong = 0
+    for j in stri:
+        tong += int(j)**3
+    if tong == i:
+        print(i, end = " ")
+    
+#bai6
+n = int(input())
+
+def check(number):
+    tong = 0
+    for j in range(1, number, 1):
+        if number % j == 0:
+            tong += j
+    if tong == number:
+        return True
+    else:
+        return False
+
+for i in range(1, n, 1):
+    if check(i):
+        print(i, end = " ")
+        
+#bai7
+n = int(input())
+
+def check(number):
+    tong = 0
+    for j in range(1, number, 1):
+        if number % j == 0:
+            tong += j
+    return tong
+
+c = 2
+for i in range(1, n, 1):
+    tmp = check(i)
+    if(tmp < n and check(tmp) == i):
+        if tmp != i:
+            print(i, end = " ")
+            c -= 1
+    if c == 0:
+        print()
+        c = 2                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      

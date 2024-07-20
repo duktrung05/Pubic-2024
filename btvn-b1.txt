@@ -1,0 +1,43 @@
+#bai1-a
+def tong_cac_chu_so(n):
+    tong = 0 
+    for chu_So in str(n):
+        tong += int(chu_so)
+    return tong
+#nhap tu ban phim 
+n = int(input("nhap so nguyen duong: "))
+if n > 0:
+    print("tong cac chu so " , n ,"la:" , tong_cac_chu_so(n))
+else:
+    print("vui long nhap lai so duong .")    
+
+#bai1-b
+def tong_cac_uoc(n):
+    tong = 0 
+    for i in range(1, n+1):
+        if n % i == 0:
+            tong += i
+    return tong
+n = int(input("nhap so nguyen duong: "))
+if n > 0:
+    print("tong cac uoc so " , n ,"la:" , tong_cac_uoc(n))
+else:
+    print("vui long nhap 1 so duong .")    
+
+#bai1-c
+def check(a,b,c):
+    if a+b-c>0 and a+c-b>0 and b+c-a>0 :
+        if a==b==c:
+            print("tam giac deu ")
+        elif a==b or b==c or a==c:
+            print("tam giac can")
+        elif a**2 + b**2 == c**2 or a**2 + c**2 == b**2 or b**2 + c**2 == a**2:
+            print("tam giac vuong")
+        else:
+            print("tam giac thuong")
+    else:
+        print("khong phai tam giac")           
+        
+a = int(input("Nhập cạnh thứ nhất: "))
+b = int(input("Nhập cạnh thứ hai: "))
+c = int(input("Nhập cạnh thứ ba: "))
