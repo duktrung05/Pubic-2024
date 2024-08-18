@@ -1,1 +1,57 @@
+#bai1
+check = lambda a, b: a if a > b else b
+a = input("nhap a : ")
+b = input("nhap b : ")
+print(check(a,b))
+
+#bai2
+def transpose_matrix(matrix):
+    transposed = [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
+    
+    return transposed
+
+def nhap_matrix(n, m):
+     matrix = []
+    for i in range(n):
+        row = list(map(int, input(f"Nhập hàng {i+1} (gồm {m} số nguyên, cách nhau bởi khoảng trắng): ").split()))
+        matrix.append(row)
+    return matrix
+def in_matrix(matrix):
+    for row in matrix:
+        print(" ".join(map(str, row)))
+
+n = int(input("Nhập số hàng của ma trận: "))
+m = int(input("Nhập số cột của ma trận: "))
+
+matrix = nhap_matrix(n, m)
+print("\nMa trận gốc:")
+in_matrix(matrix)
+
+transposed_matrix = transpose_matrix(matrix)
+print("\nMa trận chuyển vị:")
+in_matrix(transposed_matrix)
+
+#bai3
+def tinh_toan(phep_toan, *args):
+    if phep_toan == "cong":
+        tong = sum(args) 
+        return tong
+    elif phep_toan == "nhan":
+        tich = 1
+        for so in args: 
+        return tich
+    elif phep_toan == "max":
+        gia_tri_lon_nhat = max(args)  
+        return gia_tri_lon_nhat
+    elif phep_toan == "min":
+        gia_tri_nho_nhat = min(args)  
+        return gia_tri_nho_nhat
+    else:
+        return "Phep toan khong hop le"  
+
+print(tinh_toan("cong", 1, 2, 3, 4))  
+print(tinh_toan("nhan", 1, 2, 3, 4)) 
+print(tinh_toan("max", 1, 2, 3, 4))   
+print(tinh_toan("min", 1, 2, 3, 4))   
+print(tinh_toan("chia", 1, 2, 3, 4))  
 
